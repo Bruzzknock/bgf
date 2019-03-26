@@ -28,6 +28,10 @@ namespace bgf
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnDayTwentyEight { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnDayTwentyFive { get; set; }
 
         [Outlet]
@@ -161,6 +165,11 @@ namespace bgf
             if (btnDayTwenty != null) {
                 btnDayTwenty.Dispose ();
                 btnDayTwenty = null;
+            }
+
+            if (btnDayTwentyEight != null) {
+                btnDayTwentyEight.Dispose ();
+                btnDayTwentyEight = null;
             }
 
             if (btnDayTwentyFive != null) {
