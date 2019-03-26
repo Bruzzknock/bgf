@@ -9,7 +9,7 @@ namespace bgf
         public CalendarView (IntPtr handle) : base (handle)
         {
         }
-        //setup Calendar
+        //setup Calendar is pushed
         public override void ViewDidLoad()
         {
             this.View.BackgroundColor = UIColor.LightGray;
