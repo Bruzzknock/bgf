@@ -11,12 +11,16 @@ namespace bgf
         {
         }
 
-        public CustomEvent(DateTime date)
+        public void setDate(DateTime date)
         {
             this.date = date;
-            //lblDatum.Text = date.ToString();
-            //lblDescription.Text = "Here will be short description of the event";
-            //this.Title = "Event Name";
+        }
+
+        public override void ViewDidLoad()
+        {
+            lblDatum.Text = date.ToShortDateString();
+            lblDescription.Text = "Here will be short description of the event";
+            this.Title = "Event Name";
         }
     }
 }
