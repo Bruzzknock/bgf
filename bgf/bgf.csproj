@@ -134,6 +134,10 @@
     <Compile Include="CustomEvent.designer.cs">
       <DependentUpon>CustomEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilesController.cs" />
+    <Compile Include="FilesController.designer.cs">
+      <DependentUpon>FilesController.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeController.cs" />
     <Compile Include="HomeController.designer.cs">
       <DependentUpon>HomeController.cs</DependentUpon>

@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="11793" translatesAutoresizingMaskIntoConstraints="NO" image="videoplayer-14-.jpg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="11793" translatesAutoresizingMaskIntoConstraints="NO" image="videoplayer-14-.jpg" misplaced="YES">
                                 <rect key="frame" x="40" y="200" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -122,7 +122,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="955" y="-300"/>
+            <point key="canvasLocation" x="-346" y="605"/>
         </scene>
         <scene sceneID="1865">
             <objects>
@@ -133,15 +133,20 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="1861" kind="relationship" relationship="viewControllers" id="1867"/>
-                        <segue destination="1856" kind="relationship" relationship="viewControllers" id="1868"/>
-                        <segue id="3186" destination="2503" kind="relationship" relationship="viewControllers"/>
-                        <segue id="24764" destination="24477" kind="relationship" relationship="viewControllers"/>
+                        <segue id="38379" destination="36741" kind="relationship" relationship="viewControllers"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1870" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="38876" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="-56" y="-9" width="240" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="38876" id="38877">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableViewCellContentView>
+                </tableViewCell>
             </objects>
-            <point key="canvasLocation" x="-25" y="-1"/>
+            <point key="canvasLocation" x="-32" y="-48"/>
         </scene>
         <scene sceneID="2502">
             <objects>
@@ -661,7 +666,39 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24483" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="48"/>
+            <point key="canvasLocation" x="710" y="-27"/>
+        </scene>
+        <scene sceneID="36740">
+            <objects>
+                <tableViewController id="36741" sceneMemberID="viewController" customClass="FilesController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="36742">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="36745">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="36745" id="36746">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="36741" id="36743"/>
+                            <outlet property="delegate" destination="36741" id="36744"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Files" id="37092"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="Files" destination="37092" id="name-outlet-37092"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36747" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231" y="610"/>
         </scene>
     </scenes>
     <resources>
