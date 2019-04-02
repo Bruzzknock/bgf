@@ -29,6 +29,7 @@ namespace bgf
             var document = new PdfDocument(new NSUrl("https://bayes.wustl.edu/etj/articles/random.pdf"));
             pdfView.Document = document;
             pdfView.AutoScales = true;
+            //letsgo
 
 
             // Perform any additional setup after loading the view, typically from a nib.
