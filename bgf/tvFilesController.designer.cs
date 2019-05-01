@@ -11,11 +11,19 @@ using UIKit;
 
 namespace bgf
 {
-    [Register ("MagazineController")]
-    partial class MagazineController
+    [Register ("tvFilesController")]
+    partial class tvFilesController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView filesTableView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (filesTableView != null) {
+                filesTableView.Dispose ();
+                filesTableView = null;
+            }
         }
     }
 }

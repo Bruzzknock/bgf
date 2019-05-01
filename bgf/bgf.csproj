@@ -118,6 +118,7 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
+    <InterfaceDefinition Include="FilesViewCell.xib" />
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
@@ -138,19 +139,25 @@
     <Compile Include="FilesController.designer.cs">
       <DependentUpon>FilesController.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilesViewCell.cs" />
+    <Compile Include="FilesViewCell.designer.cs">
+      <DependentUpon>FilesViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileTVS.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="HomeController.designer.cs">
       <DependentUpon>HomeController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MagazineController.cs" />
-    <Compile Include="MagazineController.designer.cs">
-      <DependentUpon>MagazineController.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="SettingsViewController.cs" />
     <Compile Include="SettingsViewController.designer.cs">
       <DependentUpon>SettingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Static Resources\File.cs" />
+    <Compile Include="tvFilesController.cs" />
+    <Compile Include="tvFilesController.designer.cs">
+      <DependentUpon>tvFilesController.cs</DependentUpon>
     </Compile>
     <Compile Include="VideosController.cs" />
     <Compile Include="VideosController.designer.cs">
