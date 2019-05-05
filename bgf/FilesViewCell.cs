@@ -1,4 +1,5 @@
 ﻿using System;
+using bgf.Model;
 using bgf.Static_Resources;
 using Foundation;
 using UIKit;

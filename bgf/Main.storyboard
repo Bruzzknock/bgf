@@ -104,7 +104,7 @@
         </scene>
         <scene sceneID="1860">
             <objects>
-                <viewController id="1861" sceneMemberID="viewController" customClass="FilesController" storyboardIdentifier="FilesController">
+                <viewController id="1861" sceneMemberID="viewController" customClass="MagazineController" storyboardIdentifier="MagazineController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1853"/>
                         <viewControllerLayoutGuide type="bottom" id="1854"/>
@@ -113,8 +113,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="47731" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="518" width="46" height="30"/>
+                                <state key="normal" title="Letzte"/>
+                                <constraints>
+                                    <constraint id="47737" firstAttribute="width" secondItem="47731" secondAttribute="height" multiplier="23:15"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="BtnPrev_TouchUpInside:" destination="1861" id="48492" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="47732" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="243" y="518" width="61" height="30"/>
+                                <state key="normal" title="Nächste"/>
+                                <constraints>
+                                    <constraint id="47738" firstAttribute="width" secondItem="47732" secondAttribute="height" multiplier="61:30"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="BtnNext_TouchUpInside:" destination="1861" id="48490" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="48261" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="95" y="518" width="40" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="48268" firstAttribute="width" secondItem="48261" secondAttribute="height" multiplier="4:3"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="txtPage_TextChanged:" destination="1861" id="50023" eventType="editingChanged"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="48262" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="168" y="518" width="46" height="30"/>
+                                <state key="normal" title="Go"/>
+                                <constraints>
+                                    <constraint id="48265" firstAttribute="width" secondItem="48262" secondAttribute="height" multiplier="23:15"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="BtnGo_TouchUpInside:" destination="1861" id="48488" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="47733" firstItem="1854" firstAttribute="top" secondItem="47731" secondAttribute="bottom" constant="20"/>
+                            <constraint id="47734" firstItem="1854" firstAttribute="top" secondItem="47732" secondAttribute="bottom" constant="20"/>
+                            <constraint id="47735" firstItem="47732" firstAttribute="trailing" secondItem="1862" secondAttribute="trailingMargin"/>
+                            <constraint id="47736" firstItem="47731" firstAttribute="leading" secondItem="1862" secondAttribute="leadingMargin"/>
+                            <constraint id="48263" firstItem="47732" firstAttribute="leading" secondItem="48262" secondAttribute="trailing" constant="29"/>
+                            <constraint id="48264" firstItem="1854" firstAttribute="top" secondItem="48262" secondAttribute="bottom" constant="20"/>
+                            <constraint id="48266" firstItem="48261" firstAttribute="leading" secondItem="47731" secondAttribute="trailing" constant="33"/>
+                            <constraint id="48267" firstItem="1854" firstAttribute="top" secondItem="48261" secondAttribute="bottom" constant="20"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Magazine" id="1863"/>
+                    <connections>
+                        <outlet property="btnNext" destination="47732" id="name-outlet-47732"/>
+                        <outlet property="btnPrev" destination="47731" id="name-outlet-47731"/>
+                        <outlet property="txtPage" destination="48261" id="name-outlet-48261"/>
+                        <outlet property="btnGo" destination="48262" id="name-outlet-48262"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1864" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="8288" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -681,7 +741,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="41082" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                                <rect key="frame" x="0.0" y="178" width="320" height="340"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="41087" rowHeight="80" customClass="FilesViewCell" reuseIdentifier="CustomFileCell">
@@ -712,11 +772,52 @@
                                 </prototypes>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </tableView>
+                            <pickerView contentMode="scaleToFill" id="54626" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="111" width="320" height="59"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54956" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="23" y="73" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Year"/>
+                                <connections>
+                                    <action selector="BtnYear_TouchUpInside:" destination="40424" id="57211" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54957" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="77" y="73" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Interesse"/>
+                                <connections>
+                                    <action selector="BtnInterest_TouchUpInside:" destination="40424" id="56191" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54958" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="164" y="73" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Type"/>
+                                <connections>
+                                    <action selector="BtnType_TouchUpInside:" destination="40424" id="57212" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54959" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="258" y="73" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Filter"/>
+                                <connections>
+                                    <action selector="BtnFilter_TouchUpInside:" destination="40424" id="59448" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="filesTableView" destination="41082" id="name-outlet-41082"/>
+                        <outlet property="uiPicker" destination="54626" id="name-outlet-54626"/>
+                        <outlet property="btnYear" destination="54956" id="name-outlet-54956"/>
+                        <outlet property="btnInterest" destination="54957" id="name-outlet-54957"/>
+                        <outlet property="btnType" destination="54958" id="name-outlet-54958"/>
+                        <outlet property="btnFilter" destination="54959" id="name-outlet-54959"/>
                     </connections>
                     <navigationItem title="Title" id="42218" key="navigationItem"/>
                 </viewController>

@@ -61,7 +61,30 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.NetCore.1.8.3\lib\xamarinios\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\netstandard1.0\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.16\lib\netstandard2.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.4.0\lib\netstandard2.0\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.4.1\lib\netstandard2.0\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.4.0\lib\netstandard2.0\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
@@ -110,17 +133,18 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="FilesViewCell.xib" />
-    <None Include="Info.plist" />
+    <None Include="Info.plist">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Anmelden.cs" />
@@ -131,13 +155,11 @@
     <Compile Include="CalendarView.designer.cs">
       <DependentUpon>CalendarView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\PickerModel.cs" />
+    <Compile Include="Static Resources\ConnectionManager.cs" />
     <Compile Include="CustomEvent.cs" />
     <Compile Include="CustomEvent.designer.cs">
       <DependentUpon>CustomEvent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FilesController.cs" />
-    <Compile Include="FilesController.designer.cs">
-      <DependentUpon>FilesController.cs</DependentUpon>
     </Compile>
     <Compile Include="FilesViewCell.cs" />
     <Compile Include="FilesViewCell.designer.cs">
@@ -148,13 +170,19 @@
     <Compile Include="HomeController.designer.cs">
       <DependentUpon>HomeController.cs</DependentUpon>
     </Compile>
+    <Compile Include="MagazineController.cs" />
+    <Compile Include="MagazineController.designer.cs">
+      <DependentUpon>MagazineController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="SettingsViewController.cs" />
     <Compile Include="SettingsViewController.designer.cs">
       <DependentUpon>SettingsViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Static Resources\File.cs" />
+    <Compile Include="Static Resources\Benutzer.cs" />
+    <Compile Include="Model\File.cs" />
+    <Compile Include="Static Resources\Interests.cs" />
     <Compile Include="tvFilesController.cs" />
     <Compile Include="tvFilesController.designer.cs">
       <DependentUpon>tvFilesController.cs</DependentUpon>
@@ -165,10 +193,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="videoplayer-14-.jpg" />
+    <BundleResource Include="Resources\videoplayer-14-.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="bak2.jpg" />
+    <BundleResource Include="Resources\bak2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\videoicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pdf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

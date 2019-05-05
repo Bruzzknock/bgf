@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using bgf.Static_Resources;
+using bgf.Model;
 using Foundation;
 using UIKit;
 
@@ -42,13 +42,12 @@ namespace bgf
             tableView.DeselectRow(indexPath, true);
             */
 
-            FilesController filesController = owner.Storyboard.InstantiateViewController("FilesController") as FilesController;
+            MagazineController magazineController = owner.Storyboard.InstantiateViewController("MagazineController") as MagazineController;
  
-            if (filesController != null)
+            if (magazineController != null)
             {
-
-                filesController.show = files[indexPath.Row].Show;
-                owner.NavigationController.PushViewController(filesController, true);
+                magazineController.MagazineURL = files[indexPath.Row].URL;
+                owner.NavigationController.PushViewController(magazineController, true);
             }
         }
     }
