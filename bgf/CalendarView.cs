@@ -135,6 +135,21 @@ namespace bgf
             btnDayThirtyOne.TouchUpInside += (sender, e) => {
                 this.NavigationController.PushViewController(createCustomEventVC(31), true);
             };
+
+            btnNextMonth.TouchUpInside += (sender, e) =>
+            {
+                string[] months = new string[]{
+                        "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober",
+                    "November", "Dezember"};
+
+                for (int i = 0; i >= 11; i++)
+                {
+                    
+                    lblCurrentMonth.Text = months[i];
+
+                    i++;
+                }
+            };
         }
 
         private CustomEvent createCustomEventVC(int day)
@@ -143,5 +158,7 @@ namespace bgf
             customEvent.setDate(new DateTime(DateTime.Now.Year, 3, day));
             return customEvent;
         }
+
+       
     }
 }
