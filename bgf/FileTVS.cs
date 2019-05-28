@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AVFoundation;
+using AVKit;
 using bgf.Model;
 using Foundation;
 using UIKit;
@@ -42,12 +44,25 @@ namespace bgf
             tableView.DeselectRow(indexPath, true);
             */
 
-            MagazineController magazineController = owner.Storyboard.InstantiateViewController("MagazineController") as MagazineController;
- 
-            if (magazineController != null)
+            if (files[indexPath.Row].isMagazine)
             {
-                magazineController.MagazineURL = files[indexPath.Row].URL;
-                owner.NavigationController.PushViewController(magazineController, true);
+                MagazineController magazineController = owner.Storyboard.InstantiateViewController("MagazineController") as MagazineController;
+
+                if (magazineController != null)
+                {
+                    magazineController.MagazineURL = files[indexPath.Row].URL;
+                    owner.NavigationController.PushViewController(magazineController, true);
+                }
+            }
+            else
+            {
+                //NSUrl url = new NSUrl("Aktive Pausengestaltung.mp4", false);
+                //"https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));
+                AVPlayer player = new AVPlayer(new NSUrl(files[indexPath.Row].URL));
+                AVPlayerViewController aVPlayerView = new AVPlayerViewController();
+                aVPlayerView.Player = player;
+
+                owner.PresentViewController(aVPlayerView, true, null);
             }
         }
     }
