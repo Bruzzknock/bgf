@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="11793" translatesAutoresizingMaskIntoConstraints="NO" image="videoplayer-14-.jpg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="11793" translatesAutoresizingMaskIntoConstraints="NO" image="videoplayer-14-.jpg" misplaced="YES">
                                 <rect key="frame" x="40" y="200" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -100,11 +100,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1859" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1259" y="571"/>
+            <point key="canvasLocation" x="1126" y="-26"/>
         </scene>
         <scene sceneID="1860">
             <objects>
-                <viewController id="1861" sceneMemberID="viewController" customClass="MagazineController">
+                <viewController id="1861" sceneMemberID="viewController" customClass="MagazineController" storyboardIdentifier="MagazineController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1853"/>
                         <viewControllerLayoutGuide type="bottom" id="1854"/>
@@ -113,8 +113,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="47731" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="518" width="46" height="30"/>
+                                <state key="normal" title="Letzte"/>
+                                <constraints>
+                                    <constraint id="47737" firstAttribute="width" secondItem="47731" secondAttribute="height" multiplier="23:15"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="BtnPrev_TouchUpInside:" destination="1861" id="48492" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="47732" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="243" y="518" width="61" height="30"/>
+                                <state key="normal" title="Nächste"/>
+                                <constraints>
+                                    <constraint id="47738" firstAttribute="width" secondItem="47732" secondAttribute="height" multiplier="61:30"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="BtnNext_TouchUpInside:" destination="1861" id="48490" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="48261" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="95" y="518" width="40" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="48268" firstAttribute="width" secondItem="48261" secondAttribute="height" multiplier="4:3"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="txtPage_TextChanged:" destination="1861" id="50023" eventType="editingChanged"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="48262" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="168" y="518" width="46" height="30"/>
+                                <state key="normal" title="Go"/>
+                                <constraints>
+                                    <constraint id="48265" firstAttribute="width" secondItem="48262" secondAttribute="height" multiplier="23:15"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="BtnGo_TouchUpInside:" destination="1861" id="48488" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="47733" firstItem="1854" firstAttribute="top" secondItem="47731" secondAttribute="bottom" constant="20"/>
+                            <constraint id="47734" firstItem="1854" firstAttribute="top" secondItem="47732" secondAttribute="bottom" constant="20"/>
+                            <constraint id="47735" firstItem="47732" firstAttribute="trailing" secondItem="1862" secondAttribute="trailingMargin"/>
+                            <constraint id="47736" firstItem="47731" firstAttribute="leading" secondItem="1862" secondAttribute="leadingMargin"/>
+                            <constraint id="48263" firstItem="47732" firstAttribute="leading" secondItem="48262" secondAttribute="trailing" constant="29"/>
+                            <constraint id="48264" firstItem="1854" firstAttribute="top" secondItem="48262" secondAttribute="bottom" constant="20"/>
+                            <constraint id="48266" firstItem="48261" firstAttribute="leading" secondItem="47731" secondAttribute="trailing" constant="33"/>
+                            <constraint id="48267" firstItem="1854" firstAttribute="top" secondItem="48261" secondAttribute="bottom" constant="20"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Magazine" id="1863"/>
+                    <connections>
+                        <outlet property="btnNext" destination="47732" id="name-outlet-47732"/>
+                        <outlet property="btnPrev" destination="47731" id="name-outlet-47731"/>
+                        <outlet property="txtPage" destination="48261" id="name-outlet-48261"/>
+                        <outlet property="btnGo" destination="48262" id="name-outlet-48262"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1864" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="8288" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -122,7 +182,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="955" y="-300"/>
+            <point key="canvasLocation" x="972" y="615"/>
         </scene>
         <scene sceneID="1865">
             <objects>
@@ -133,6 +193,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+					<segue id="42368" destination="42130" kind="relationship" relationship="viewControllers"/>
                         <segue destination="1861" kind="relationship" relationship="viewControllers" id="1867"/>
                         <segue destination="1856" kind="relationship" relationship="viewControllers" id="1868"/>
                         <segue id="3186" destination="2503" kind="relationship" relationship="viewControllers"/>
@@ -141,6 +202,14 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1870" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="38876" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="-56" y="-9" width="240" height="44"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="38876" id="38877">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableViewCellContentView>
+                </tableViewCell>
             </objects>
             <point key="canvasLocation" x="-107" y="-55"/>
         </scene>
@@ -175,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2505" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="885"/>
+            <point key="canvasLocation" x="436" y="1267"/>
         </scene>
         <scene sceneID="12908">
             <objects>
@@ -662,7 +731,121 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24483" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="48"/>
+            <point key="canvasLocation" x="710" y="-27"/>
+        </scene>
+        <scene sceneID="40423">
+            <objects>
+                <viewController id="40424" sceneMemberID="viewController" customClass="tvFilesController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="40421"/>
+                        <viewControllerLayoutGuide type="bottom" id="40422"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="40425">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="41082" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="178" width="320" height="340"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="41087" rowHeight="80" customClass="FilesViewCell" reuseIdentifier="CustomFileCell">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="41087" id="41088">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="41089" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="4" width="89" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="41090" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                    <rect key="frame" x="119" y="8" width="186" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgThumbnail" destination="41089" id="name-outlet-41089"/>
+                                            <outlet property="lblName" destination="41090" id="name-outlet-41090"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </tableView>
+                            <pickerView contentMode="scaleToFill" id="54626" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="111" width="320" height="59"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54956" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="23" y="73" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Year"/>
+                                <connections>
+                                    <action selector="BtnYear_TouchUpInside:" destination="40424" id="57211" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54957" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="77" y="73" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Interesse"/>
+                                <connections>
+                                    <action selector="BtnInterest_TouchUpInside:" destination="40424" id="56191" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54958" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="164" y="73" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Type"/>
+                                <connections>
+                                    <action selector="BtnType_TouchUpInside:" destination="40424" id="57212" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54959" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="258" y="73" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Filter"/>
+                                <connections>
+                                    <action selector="BtnFilter_TouchUpInside:" destination="40424" id="59448" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="filesTableView" destination="41082" id="name-outlet-41082"/>
+                        <outlet property="uiPicker" destination="54626" id="name-outlet-54626"/>
+                        <outlet property="btnYear" destination="54956" id="name-outlet-54956"/>
+                        <outlet property="btnInterest" destination="54957" id="name-outlet-54957"/>
+                        <outlet property="btnType" destination="54958" id="name-outlet-54958"/>
+                        <outlet property="btnFilter" destination="54959" id="name-outlet-54959"/>
+                    </connections>
+                    <navigationItem title="Title" id="42218" key="navigationItem"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="40426" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="524" y="605"/>
+        </scene>
+        <scene sceneID="42129">
+            <objects>
+                <navigationController id="42130" sceneMemberID="viewController" storyboardIdentifier="tvFilesNavigationController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="42132">
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="42219" destination="40424" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                    <tabBarItem key="tabBarItem" id="42367" title="Files"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42133" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="595"/>
         </scene>
         <scene sceneID="36832">
             <objects>

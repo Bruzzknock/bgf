@@ -1,7 +1,7 @@
 ﻿
 using System;
 using System.Drawing;
-
+using bgf.Static_Resources;
 using Foundation;
 using UIKit;
 
@@ -53,8 +53,8 @@ namespace bgf
         }
 
         partial void BtnAnmelden_TouchUpInside(UIButton sender)
-        {
-            if (txtUsername.Text == "kica" && txtPassword.Text == "123")
+        {            
+            if (ConnectionManager.Anmelden(txtUsername.Text,txtPassword.Text))
                 OnLoginSuccess(this, new EventArgs());
             else
                 new UIAlertView("Login Error","Bad username or password",null,"OK",null).Show();
