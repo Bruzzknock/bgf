@@ -75,7 +75,7 @@
         </scene>
         <scene sceneID="1855">
             <objects>
-                <viewController id="1856" sceneMemberID="viewController" customClass="VideosController">
+                <viewController id="1856" sceneMemberID="viewController" customClass="VideosController" storyboardIdentifier="VideosController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1851"/>
                         <viewControllerLayoutGuide type="bottom" id="1852"/>
@@ -85,16 +85,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="11793" translatesAutoresizingMaskIntoConstraints="NO" image="videoplayer-14-.jpg">
-                                <rect key="frame" x="40" y="200" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="61741" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="videoplayer-14-.jpg">
+                                <rect key="frame" x="40" y="214" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint id="11795" firstItem="11793" firstAttribute="top" secondItem="1851" secondAttribute="bottom" constant="180"/>
-                            <constraint id="11796" firstItem="1852" firstAttribute="top" secondItem="11793" secondAttribute="bottom" constant="190"/>
-                            <constraint id="11797" firstItem="11793" firstAttribute="leading" secondItem="1857" secondAttribute="leadingMargin" constant="24"/>
-                            <constraint id="11798" firstAttribute="trailingMargin" secondItem="11793" secondAttribute="trailing" constant="24"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Videos" id="1858"/>
                 </viewController>
@@ -115,7 +110,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="47731" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="16" y="468" width="46" height="30"/>
+                                <rect key="frame" x="16" y="518" width="46" height="30"/>
                                 <state key="normal" title="Letzte"/>
                                 <constraints>
                                     <constraint id="47737" firstAttribute="width" secondItem="47731" secondAttribute="height" multiplier="23:15"/>
@@ -125,7 +120,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="47732" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="243" y="468" width="61" height="30"/>
+                                <rect key="frame" x="243" y="518" width="61" height="30"/>
                                 <state key="normal" title="Nächste"/>
                                 <constraints>
                                     <constraint id="47738" firstAttribute="width" secondItem="47732" secondAttribute="height" multiplier="61:30"/>
@@ -135,7 +130,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="48261" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="95" y="468" width="40" height="30"/>
+                                <rect key="frame" x="95" y="518" width="40" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -147,7 +142,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="48262" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="168" y="468" width="46" height="30"/>
+                                <rect key="frame" x="168" y="518" width="46" height="30"/>
                                 <state key="normal" title="Go"/>
                                 <constraints>
                                     <constraint id="48265" firstAttribute="width" secondItem="48262" secondAttribute="height" multiplier="23:15"/>
@@ -194,10 +189,8 @@
                     </tabBar>
                     <connections>
                         <segue id="42368" destination="42130" kind="relationship" relationship="viewControllers"/>
-                        <segue destination="1861" kind="relationship" relationship="viewControllers" id="1867"/>
-                        <segue destination="1856" kind="relationship" relationship="viewControllers" id="1868"/>
-                        <segue id="3186" destination="2503" kind="relationship" relationship="viewControllers"/>
-                        <segue id="24764" destination="24477" kind="relationship" relationship="viewControllers"/>
+                        <segue id="60688" destination="2503" kind="relationship" relationship="viewControllers"/>
+                        <segue id="60948" destination="24477" kind="relationship" relationship="viewControllers"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1870" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,7 +203,7 @@
                     </tableViewCellContentView>
                 </tableViewCell>
             </objects>
-            <point key="canvasLocation" x="-107" y="-55"/>
+            <point key="canvasLocation" x="-38" y="-28"/>
         </scene>
         <scene sceneID="2502">
             <objects>
@@ -243,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2505" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="1267"/>
+            <point key="canvasLocation" x="-380" y="877"/>
         </scene>
         <scene sceneID="12908">
             <objects>
@@ -260,18 +253,18 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="12917" translatesAutoresizingMaskIntoConstraints="NO" insetsLayoutMarginsFromSafeArea="NO" misplaced="YES">
                                 <rect key="frame" x="16" y="9" width="65" height="30"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Previous">
+                                <state key="normal" title="Februar">
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="12918" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="239" y="10" width="65" height="30"/>
                                 <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
-                                <state key="normal" title="Next">
+                                <state key="normal" title="April">
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12919" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="März" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12919" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="139" y="14" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -717,7 +710,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="25666" key="tableHeaderView">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Einmalige Anmeldung"/>
+                            <state key="normal" title="Einmalige Anmledung"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="25755" key="tableFooterView">
                             <rect key="frame" x="0.0" y="116" width="320" height="44"/>
