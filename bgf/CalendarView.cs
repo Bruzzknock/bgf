@@ -1,17 +1,23 @@
 using Foundation;
 using System;
 using UIKit;
+using System.Collections.Generic;
 
 namespace bgf
 {
     public partial class CalendarView : UIViewController
     {
+
+        
         public CalendarView (IntPtr handle) : base (handle)
         {
+            
         }
         //setup Calendar is pushed
         public override void ViewDidLoad()
         {         
+            
+
             btnFirstDay.TouchUpInside += (sender, e) => {
                 this.NavigationController.PushViewController(createCustomEventVC(1), true);
             };
@@ -138,18 +144,38 @@ namespace bgf
 
             btnNextMonth.TouchUpInside += (sender, e) =>
             {
+                
                 string[] months = new string[]{
                         "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober",
-                    "November", "Dezember"};
+                        "November", "Dezember"};
 
-                for (int i = 0; i >= 11; i++)
+                lblCurrentMonth.Text = months[0];
+
+                int i=0;
+
+                switch(i)
                 {
-                    
-                    lblCurrentMonth.Text = months[i];
+                    case 0:
+                        lblCurrentMonth.Text = months[0];
+                        
+                        break;
+                    case 1:
+                        lblCurrentMonth.Text = months[1];
+                        
+                        break;
+                    case 2:
+                        lblCurrentMonth.Text = months[2];
+                        
+                        break;
 
-                    i++;
                 }
+
+                
             };
+
+            
+
+
         }
 
         private CustomEvent createCustomEventVC(int day)
@@ -160,5 +186,32 @@ namespace bgf
         }
 
        
+       
+    }
+
+    public class Months
+    {
+        public string Value { get; set; }
+        public int Key { get; set; }
+
+        public static List<Months> GetMonths()
+        {
+            var months = new List<Months>()
+            {
+                new Months() {Key=0, Value ="Januar"},
+                new Months() {Key=1, Value ="Februar"},
+                new Months() {Key=2, Value = "März"},
+                new Months() {Key=3, Value = "April"},
+                new Months() {Key=4, Value = "Mai"},
+                new Months() {Key=5, Value = "Juni"},
+                new Months() {Key=6, Value = "Juli"},
+                new Months() {Key=7, Value = "August"},
+                new Months() {Key=8, Value = "September"},
+                new Months() {Key=9, Value = "Oktober"},
+                new Months() {Key=10,Value = "November"},
+                new Months() {Key=11, Value = "Dezember"}
+            };
+            return months;
+        }
     }
 }

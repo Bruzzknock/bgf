@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="11793" translatesAutoresizingMaskIntoConstraints="NO" image="videoplayer-14-.jpg" misplaced="YES">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="11793" translatesAutoresizingMaskIntoConstraints="NO" image="videoplayer-14-.jpg">
                                 <rect key="frame" x="40" y="200" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -115,7 +115,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="47731" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="16" y="518" width="46" height="30"/>
+                                <rect key="frame" x="16" y="468" width="46" height="30"/>
                                 <state key="normal" title="Letzte"/>
                                 <constraints>
                                     <constraint id="47737" firstAttribute="width" secondItem="47731" secondAttribute="height" multiplier="23:15"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="47732" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="243" y="518" width="61" height="30"/>
+                                <rect key="frame" x="243" y="468" width="61" height="30"/>
                                 <state key="normal" title="Nächste"/>
                                 <constraints>
                                     <constraint id="47738" firstAttribute="width" secondItem="47732" secondAttribute="height" multiplier="61:30"/>
@@ -135,7 +135,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="48261" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="95" y="518" width="40" height="30"/>
+                                <rect key="frame" x="95" y="468" width="40" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -147,7 +147,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="48262" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="168" y="518" width="46" height="30"/>
+                                <rect key="frame" x="168" y="468" width="46" height="30"/>
                                 <state key="normal" title="Go"/>
                                 <constraints>
                                     <constraint id="48265" firstAttribute="width" secondItem="48262" secondAttribute="height" multiplier="23:15"/>
@@ -193,12 +193,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-					<segue id="42368" destination="42130" kind="relationship" relationship="viewControllers"/>
+                        <segue id="42368" destination="42130" kind="relationship" relationship="viewControllers"/>
                         <segue destination="1861" kind="relationship" relationship="viewControllers" id="1867"/>
                         <segue destination="1856" kind="relationship" relationship="viewControllers" id="1868"/>
                         <segue id="3186" destination="2503" kind="relationship" relationship="viewControllers"/>
                         <segue id="24764" destination="24477" kind="relationship" relationship="viewControllers"/>
-                        <segue id="36923" destination="36833" kind="relationship" relationship="viewControllers"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1870" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,7 +271,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="März" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12919" translatesAutoresizingMaskIntoConstraints="NO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12919" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="139" y="14" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -846,81 +845,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42133" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="103" y="595"/>
-        </scene>
-        <scene sceneID="36832">
-            <objects>
-                <viewController id="36833" sceneMemberID="viewController" customClass="ProfileController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="36830"/>
-                        <viewControllerLayoutGuide type="bottom" id="36831"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="36834">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="37440" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="37" y="118" width="127" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="38350" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="User:">
-                                <rect key="frame" x="37" y="303" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="38351" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Credit Points:">
-                                <rect key="frame" x="37" y="348" width="103" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="38352" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="88" y="303" width="114" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="38353" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="160" y="348" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="36922"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="profileImage" destination="37440" id="name-outlet-37440"/>
-                        <outlet property="CreditPoints_Label" destination="38353" id="name-outlet-38353"/>
-                        <outlet property="User_Label" destination="38352" id="name-outlet-38352"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="36835" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="398" y="-621"/>
-        </scene>
-        <scene sceneID="36927">
-            <objects>
-                <viewController id="36928" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="36925"/>
-                        <viewControllerLayoutGuide type="bottom" id="36926"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="36929">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="36930" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-101" y="-802"/>
         </scene>
     </scenes>
     <resources>
