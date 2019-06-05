@@ -20,17 +20,30 @@ namespace bgf
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblBis { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblDatum { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblDescription { get; set; }
+        UIKit.UITextView lblDescription { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblVon { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
             if (btnAnAbmelden != null) {
                 btnAnAbmelden.Dispose ();
                 btnAnAbmelden = null;
+            }
+
+            if (lblBis != null) {
+                lblBis.Dispose ();
+                lblBis = null;
             }
 
             if (lblDatum != null) {
@@ -41,6 +54,11 @@ namespace bgf
             if (lblDescription != null) {
                 lblDescription.Dispose ();
                 lblDescription = null;
+            }
+
+            if (lblVon != null) {
+                lblVon.Dispose ();
+                lblVon = null;
             }
         }
     }

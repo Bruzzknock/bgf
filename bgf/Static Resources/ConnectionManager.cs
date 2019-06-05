@@ -8,6 +8,7 @@ using bgf.Model;
 using bgf.Static_Resources;
 using Foundation;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Cms;
 using UIKit;
 
 namespace bgf.Static_Resources
@@ -246,6 +247,47 @@ namespace bgf.Static_Resources
             Debug.WriteLine("Done.");
 
             return types.ToArray();
+        }
+
+        public static List<Events_Tasks> GetEvents()
+        {
+            List<Events_Tasks> events = new List<Events_Tasks>();
+            
+
+            try
+            {
+                Debug.WriteLine("Connecting to MySQL...");
+                conn.Open();
+
+                string sql = "SELECT Event_ID, Event_Bezeichnung, Event_Datum, Event_Beschreibung, Event_Von, Event_Bis FROM Events;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while(rdr.Read())
+                {
+                    Events_Tasks e = new Events_Tasks();
+
+                    e.E_ID = (int)rdr[0];
+                    e.E_Bezeichnung = (string)rdr[1];
+                    e.E_Date = (DateTime)rdr[2];
+                    e.E_Beschreibung = (string)rdr[3];
+                    e.E_Von = (TimeSpan)rdr[4];
+                    e.E_Bis = (TimeSpan)rdr[5];
+
+                    
+
+                    events.Add(e);
+                }
+                rdr.Close();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+            conn.Close();
+            Debug.WriteLine("Done.");
+
+            return events;
         }
 
         private static bool isMagazine(string type)

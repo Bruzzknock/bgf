@@ -56,6 +56,10 @@ namespace bgf
         {            
             if (ConnectionManager.Anmelden(txtUsername.Text,txtPassword.Text))
                 OnLoginSuccess(this, new EventArgs());
+                //if(txtUsername.Text == "Betina" && txtPassword.Text == "123" )
+                //{
+                //OnLoginSuccess(this, new EventArgs());
+                //}
             else
                 new UIAlertView("Login Error","Bad username or password",null,"OK",null).Show();
         }

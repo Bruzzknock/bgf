@@ -90,6 +90,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\bak_logo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -103,9 +106,6 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
@@ -157,6 +157,16 @@
     <Compile Include="CalendarView.designer.cs">
       <DependentUpon>CalendarView.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventController.cs" />
+    <Compile Include="EventController.designer.cs">
+      <DependentUpon>EventController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventsTV.cs" />
+    <Compile Include="EventViewCell.cs" />
+    <Compile Include="EventViewCell.designer.cs">
+      <DependentUpon>EventViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Events_Tasks.cs" />
     <Compile Include="Model\PickerModel.cs" />
     <Compile Include="Static Resources\ConnectionManager.cs" />
     <Compile Include="CustomEvent.cs" />
@@ -178,16 +188,13 @@
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ProfileController.cs" />
-    <Compile Include="ProfileController.designer.cs">
-      <DependentUpon>ProfileController.cs</DependentUpon>
-    </Compile>
     <Compile Include="SettingsViewController.cs" />
     <Compile Include="SettingsViewController.designer.cs">
       <DependentUpon>SettingsViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Static Resources\Benutzer.cs" />
     <Compile Include="Model\File.cs" />
+    <Compile Include="Static Resources\Events.cs" />
     <Compile Include="Static Resources\Interests.cs" />
     <Compile Include="tvFilesController.cs" />
     <Compile Include="tvFilesController.designer.cs">
@@ -209,6 +216,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\unBakbar-Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

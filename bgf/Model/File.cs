@@ -19,4 +19,5 @@ namespace bgf.Model
         public bool isMagazine { get; set; }
         public DateTime Date { get; set; }
     }
+
 }

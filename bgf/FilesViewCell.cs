@@ -19,7 +19,7 @@ namespace bgf
 
         protected FilesViewCell(IntPtr handle) : base(handle)
         {
-            // Note: this .ctor should not contain any initialization logic.
+            // Note: this .ctor should not contain any initialization logic.user
         }
 
         public void setFile(File file)
