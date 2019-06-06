@@ -16,6 +16,9 @@ namespace bgf
         private nint pckDate;
         private nint pckInterest;
         private nint pckType;
+        private UIColor dark = new UIColor(18f / 255.0f, 19f / 255.0f, 15f / 255.0f, 255f / 255.0f);
+        private UIColor bright = new UIColor(230f / 255.0f, 230f / 255.0f, 233f / 255.0f, 255f / 255.0f);
+
 
         public tvFilesController(IntPtr handle) : base(handle)
         {
@@ -63,14 +66,14 @@ namespace bgf
 
         private void SelectFilter(UIButton uIButton)
         {
-            uIButton.BackgroundColor = UIColor.Blue;
-            uIButton.SetTitleColor(UIColor.White,UIControlState.Normal);
+            uIButton.BackgroundColor = dark;
+            uIButton.SetTitleColor(bright,UIControlState.Normal);
         }
 
         private void DeselectFilter(UIButton uIButton)
         {
-            uIButton.BackgroundColor = UIColor.White;
-            uIButton.SetTitleColor(UIColor.Blue, UIControlState.Normal);
+            uIButton.BackgroundColor = bright;
+            uIButton.SetTitleColor(dark, UIControlState.Normal);
         }
 
         partial void BtnInterest_TouchUpInside(UIButton sender)

@@ -74,7 +74,7 @@ namespace bgf.Static_Resources
                     File f = new File();
                     f.ID = (int)rdr[0];
                     f.Title = (string)rdr[1];
-                    f.URL = "http://bak.teamoddity.com/data/" + (string)rdr[2];
+                    f.URL = "http://bak.teamoddity.com" + (string)rdr[2];
                     f.Date = (DateTime)rdr[3];
                     f.isMagazine = isMagazine((string)rdr[4]);
                     f.Image = f.isMagazine ? new UIImage("pdf.png") : new UIImage("videoicon.png");
