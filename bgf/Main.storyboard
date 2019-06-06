@@ -879,5 +879,5 @@
         <image name="videoplayer-14-.jpg" width="3000" height="1997"/>
         <image name="bak2.jpg" width="1280" height="902"/>
     </resources>
-    <color key="tintColor" colorSpace="calibratedRGB" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1"/>
+    <color key="tintColor" colorSpace="calibratedRGB" red="0.070588235294117646" green="0.074509803921568626" blue="0.058823529411764705" alpha="1"/>
 </document>
