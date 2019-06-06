@@ -94,7 +94,7 @@ namespace bgf.Static_Resources
 
             return files;
         }
-
+        
         public static List<File> GetFiles(string date,string interest, string type)
         {
             List<File> files = new List<File>();

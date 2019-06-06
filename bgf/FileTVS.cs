@@ -14,6 +14,7 @@ namespace bgf
     {
         List<File> files;
         UIViewController owner;
+       
 
         public FileTVS(List<File> files, tvFilesController tvFilesController)
         {
@@ -63,6 +64,7 @@ namespace bgf
                 aVPlayerView.Player = player;
 
                 owner.PresentViewController(aVPlayerView, true, null);
+              
             }
         }
     }
