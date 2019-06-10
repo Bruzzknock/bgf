@@ -7,6 +7,7 @@ using UIKit;
 using AVFoundation;
 using AVKit;
 using bgf.Model;
+using bgf.Static_Resources;
 
 namespace bgf
 {
@@ -15,11 +16,13 @@ namespace bgf
 
         List<Events_Tasks> events;
         UIViewController owner;
+        
 
         public EventsTV(List<Events_Tasks> events, EventController eventController)
         {
             this.events = events;
             this.owner = eventController;
+           
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -34,7 +37,7 @@ namespace bgf
         {
             return events.Count;
         }
-
+        
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
 
@@ -49,13 +52,9 @@ namespace bgf
                 customevent.e_Bis = events[indexPath.Row].E_Bis;
                 owner.NavigationController.PushViewController(customevent, true);
 
-
-
-
-
-
+                Events.ID = events[indexPath.Row].E_ID;
             }
-
+            
 
         }
 

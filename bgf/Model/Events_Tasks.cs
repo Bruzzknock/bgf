@@ -23,19 +23,22 @@ namespace bgf.Model
 
         public TimeSpan E_Bis { get; set; }
 
+        //public Events_Tasks()
+        //{
+
+        //}
+
         public Events_Tasks()
         {
-
-        }
-
-        public Events_Tasks(int E_ID)
-        {
+            this.E_ID = E_ID;
             this.E_Date = E_Date;
             this.E_Bezeichnung = E_Bezeichnung;
             this.E_Beschreibung = E_Beschreibung;
             this.E_Von = E_Von;
             this.E_Bis = E_Bis;
         }
+
+        
     }
     
 

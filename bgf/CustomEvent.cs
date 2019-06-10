@@ -4,7 +4,7 @@ using UIKit;
 using bgf.Static_Resources;
 using System.Collections.Generic;
 using bgf.Model;
-using Org.BouncyCastle.Asn1.Cms;
+
 
 namespace bgf
 {
@@ -27,6 +27,11 @@ namespace bgf
         {
         }
 
+        public CustomEvent()
+        {
+
+        }
+
         public void setDate(DateTime date)
         {
             this.date = date;
@@ -42,7 +47,7 @@ namespace bgf
         public override void ViewDidLoad()
         {
 
-
+            
             base.ViewDidLoad();
 
 
@@ -52,36 +57,54 @@ namespace bgf
             lblBis.Text = e_Bis.ToString();
             lblVon.Text = e_Von.ToString();
 
+            if (e_ID == Events.ID)
+            {
+
+                if (ConnectionManager.GetT() == false)
+                {
+                    btnAnAbmelden.TouchUpInside += (sender, e) =>
+                    {
+
+
+
+
+
+                        new UIAlertView("Anmeldung", "Sie haben sich angemeldet.", null, "Ok", null).Show();
+                        btnAnAbmelden.SetTitle("Anmeldung", forState: UIControlState.Disabled);
+
+                        ConnectionManager.InsertData();
+                        btnAnAbmelden.Hidden = true;
+                    
+                   
+
+                    };
+                }
+                else
+                {
+                    btnAnAbmelden.Hidden = true;
+                }
+
+            }
 
 
 
 
 
 
-
-
-            btnAnAbmelden.TouchUpInside += (sender, e) =>
-             {
-                 
-                 counter++;
-
-
-                 if (counter >= 1)
-                 {
-
-                     new UIAlertView("Anmeldung", "Sie haben sich angemeldet.", null, "Ok", null).Show();
-                     btnAnAbmelden.SetTitle("Anmeldung", forState: UIControlState.Disabled);
-                     btnAnAbmelden.Hidden = true;
-                 }
-
-
-
-             };
 
 
 
         }
+        
+           
+        
 
+        public int GetE_ID()
+        {
+           return e_ID;
+        }
+
+        
 
     }
 }

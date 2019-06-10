@@ -11,5 +11,6 @@ namespace bgf.Static_Resources
    {
         public static DateTime[] Event_Date { get; set; }
         public static string[] Description { get; set; }
+        public static int ID { get; set; }
    }
 }

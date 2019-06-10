@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -8,15 +9,16 @@ using bgf.Model;
 using bgf.Static_Resources;
 using Foundation;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Asn1.Cms;
 using UIKit;
 
 namespace bgf.Static_Resources
 {
     public static class ConnectionManager
     {
+        
         static string connStr = "server=bak.teamoddity.com;user=root;database=BAK;password=BAKpasswd";
         static MySqlConnection conn = new MySqlConnection(connStr);
+        
 
         public static bool Anmelden(string username, string password)
         {
@@ -150,6 +152,47 @@ namespace bgf.Static_Resources
             return files;
         }
 
+        public static void InsertData()
+        {
+            try
+            {
+                Debug.WriteLine("Connecting to MySQL...");
+                conn.Open();
+
+                string sql = "Select * From Benutzer_Event;";
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(sql, conn);
+
+                DataSet ds = new DataSet("Events_Eintragung");
+
+                sqlDataAdapter.FillSchema(ds, SchemaType.Source, "Benutzer_Events");
+                sqlDataAdapter.Fill(ds, "Benutzer_Events");
+
+                DataTable tblBE;
+                tblBE = ds.Tables["Benutzer_Events"];
+
+                DataRow drCurrent;
+                drCurrent = tblBE.NewRow();
+
+
+                drCurrent["Benutzer_ID"] = Benutzer.ID;
+                drCurrent["Event_ID"] = Events.ID;
+
+                tblBE.Rows.Add(drCurrent);
+
+                MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(sqlDataAdapter);
+                sqlDataAdapter.Update(ds, "Benutzer_Events");
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+            conn.Close();
+            Debug.WriteLine("Done.");
+
+
+
+        }
+
         public static string[] GetDates()
         {
             List<string> dates = new List<string>();
@@ -252,7 +295,7 @@ namespace bgf.Static_Resources
         public static List<Events_Tasks> GetEvents()
         {
             List<Events_Tasks> events = new List<Events_Tasks>();
-            
+           
 
             try
             {
@@ -266,6 +309,7 @@ namespace bgf.Static_Resources
                 while(rdr.Read())
                 {
                     Events_Tasks e = new Events_Tasks();
+                    
 
                     e.E_ID = (int)rdr[0];
                     e.E_Bezeichnung = (string)rdr[1];
@@ -288,6 +332,44 @@ namespace bgf.Static_Resources
             Debug.WriteLine("Done.");
 
             return events;
+        }
+
+        public static bool GetT()
+        {
+            Boolean angemeldet = false;
+            int count = 0;
+
+            try
+            {
+                Debug.WriteLine("Connecting to MySLQ...");
+                conn.Open();
+
+
+                string sql = "Select Count(*) FROM Benutzer_Event WHERE Benutzer_ID=" + Benutzer.ID + " && Event_ID=" + Events.ID + ";";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                
+                while(rdr.Read())
+                {
+                    count = (int)rdr[0];
+                }
+                rdr.Close();
+                if(count > 1)
+                {
+                    angemeldet = true;
+                }
+                else
+                {
+                    angemeldet = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+            conn.Close();
+            Debug.WriteLine("Done.");
+            return angemeldet;
         }
 
         private static bool isMagazine(string type)
