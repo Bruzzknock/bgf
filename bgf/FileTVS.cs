@@ -7,7 +7,7 @@ using AVKit;
 using bgf.Model;
 using Foundation;
 using UIKit;
-
+/*In dieser Klasse wird die TableView initialisiert und die Files vom ConnectionManager.cs benutzt*/
 namespace bgf
 {
     class FileTVS : UITableViewSource
@@ -36,14 +36,10 @@ namespace bgf
             return files.Count;
         }
 
+        /*In dieser Methode wird die TableView mit Dokumenten und Videos gefüllt*/
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            //OVO JE RESENJE SAMO NEKA PUSHUJE NAVIGATION CONTROLLER
-            /*UIAlertController okAlertController = UIAlertController.Create("Row Selected", tableItems[indexPath.Row], UIAlertControllerStyle.Alert);
-            okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-            owner.PresentViewController(okAlertController, true, null);
-            tableView.DeselectRow(indexPath, true);
-            */
+            
 
             if (files[indexPath.Row].isMagazine)
             {

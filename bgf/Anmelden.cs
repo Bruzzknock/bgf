@@ -5,6 +5,8 @@ using bgf.Static_Resources;
 using Foundation;
 using UIKit;
 
+/*In dieser Klasse wird die Anmeldung/Login implementiert*/
+
 namespace bgf
 {
     public partial class Anmelden : UIViewController
@@ -28,6 +30,8 @@ namespace bgf
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            txtUsername.Text = bgf.Helpers.Settings.GeneralSettings;
+            txtPassword.Text = bgf.Helpers.Settings.GeneralPassword;
 
             // Perform any additional setup after loading the view, typically from a nib.
         }
@@ -53,15 +57,18 @@ namespace bgf
         }
 
         partial void BtnAnmelden_TouchUpInside(UIButton sender)
-        {            
-            if (ConnectionManager.Anmelden(txtUsername.Text,txtPassword.Text))
+        {
+            if (ConnectionManager.Anmelden(txtUsername.Text, txtPassword.Text))
+            {
+                bgf.Helpers.Settings.GeneralSettings = txtUsername.Text;
+                bgf.Helpers.Settings.GeneralPassword = txtPassword.Text;
                 OnLoginSuccess(this, new EventArgs());
-                //if(txtUsername.Text == "Betina" && txtPassword.Text == "123" )
-                //{
-                //OnLoginSuccess(this, new EventArgs());
-                //}
+            }
+
             else
-                new UIAlertView("Login Error","Bad username or password",null,"OK",null).Show();
+            {
+                new UIAlertView("Login Error", "Bad username or password", null, "OK", null).Show();
+            }
         }
 
         #endregion

@@ -2,6 +2,7 @@ using Foundation;
 using PdfKit;
 using System;
 using UIKit;
+/*In dieser Klasse wird die Magazine implementiert. Beim Aufruf einer Magazine in der File TableView wird das hier aufgerufen*/
 
 namespace bgf
 {
@@ -16,6 +17,7 @@ namespace bgf
         {
         }
 
+        /*In dieser Methode wird das ausgewählte Magazin initialisiert.*/
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -51,11 +53,13 @@ namespace bgf
                 //this.View.AddSubview(uIScrollView);
         }
 
+        /*Diese Methode wird verwendet um das aktuelle Seite vom Magazin anzuzeigen*/
         private void UpdateCurrentPage()
         {
             pdfPage = pdfView.CurrentPage;
         }
 
+        /*Diese Methode wird verwendet wenn man eine Seitenanzahl eingibt*/
         partial void BtnGo_TouchUpInside(UIButton sender)
         {
             UpdateCurrentPage();
@@ -79,7 +83,7 @@ namespace bgf
                 UpdateCurrentPage();
             }
         }
-
+        /*In dieser Methode ruft man die nächste Seite auf*/
         partial void BtnNext_TouchUpInside(UIButton sender)
         {
             UpdateCurrentPage();
@@ -88,6 +92,7 @@ namespace bgf
             updateTex(pdfPage.Page.PageNumber);
         }
 
+        /*In dieser Methode ruft man die vorherige Seite auf*/
         partial void BtnPrev_TouchUpInside(UIButton sender)
         {
             UpdateCurrentPage();
@@ -95,6 +100,7 @@ namespace bgf
             UpdateCurrentPage();
             updateTex(pdfPage.Page.PageNumber);
         }
+        /*In dieser Methode wandelt man die eingegeben Seitenanzahl auf nint um*/
         private void updateTex(nint num)
         {
             txtPage.Text = num.ToString();

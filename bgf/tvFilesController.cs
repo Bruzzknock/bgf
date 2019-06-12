@@ -4,7 +4,7 @@ using Foundation;
 using System;
 using System.Collections.Generic;
 using UIKit;
-
+/*In dieser Klasse wird die einzelnen Dokumente, Videos und Präsentationen mit Filter implemetiert*/
 namespace bgf
 {
     public partial class tvFilesController : UIViewController
@@ -19,12 +19,13 @@ namespace bgf
         private UIColor dark = new UIColor(18f / 255.0f, 19f / 255.0f, 15f / 255.0f, 255f / 255.0f);
         private UIColor bright = new UIColor(230f / 255.0f, 230f / 255.0f, 233f / 255.0f, 255f / 255.0f);
 
-
+        /*Default Konstruktor*/
         public tvFilesController(IntPtr handle) : base(handle)
         {
 
         }
 
+        /*Mit dieser Methode wird die Magazine und Videos angezeigt*/
         public override void ViewDidLoad()
         {
             data = ConnectionManager.GetFiles();
@@ -48,6 +49,7 @@ namespace bgf
             filesTableView.ReloadData();
         }
 
+        /*In dieser Methode ruft man das gewünschte Auswahlt ab - nach Datum , Interesse oder Datatypes sortieren*/
         private void saveSelection()
         {
             switch (currentlySelected)
@@ -87,6 +89,7 @@ namespace bgf
             DeselectFilter(btnType);
         }
 
+        /*In dieser Methode wird das Jahr gewechselt*/
         partial void BtnYear_TouchUpInside(UIButton sender)
         {
             model.Source = ConnectionManager.GetDates();

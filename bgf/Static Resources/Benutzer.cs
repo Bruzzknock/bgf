@@ -5,7 +5,7 @@ using System.Text;
 
 using Foundation;
 using UIKit;
-
+/*In dieser Klasse wird die Attribute vom Benutzer implementiert*/
 namespace bgf.Static_Resources
 {
     public static class Benutzer

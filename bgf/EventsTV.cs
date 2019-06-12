@@ -9,6 +9,7 @@ using AVKit;
 using bgf.Model;
 using bgf.Static_Resources;
 
+/*In dieser Klasse wird das Table View initialisier. Diese zeigt die verschiedenen Events an*/
 namespace bgf
 {
     class EventsTV : UITableViewSource
@@ -16,8 +17,8 @@ namespace bgf
 
         List<Events_Tasks> events;
         UIViewController owner;
-        
 
+        /*Default Konstruktor*/
         public EventsTV(List<Events_Tasks> events, EventController eventController)
         {
             this.events = events;
@@ -25,6 +26,7 @@ namespace bgf
            
         }
 
+        /*Mit dieser Methode wird die Zelle einer TableView initialisiert*/
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             var cell = (EventViewCell)tableView.DequeueReusableCell("EventsCell", indexPath);
@@ -33,11 +35,13 @@ namespace bgf
             return cell;
         }
 
+        /*Mit dieser Methode wird die Anzahl von Reihen*/
         public override nint RowsInSection(UITableView tableview, nint section)
         {
             return events.Count;
         }
-        
+
+        /*Mit dieser Methode werden die Events in der CustomEvent initialisert und im Customevent angezeigt*/
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
 

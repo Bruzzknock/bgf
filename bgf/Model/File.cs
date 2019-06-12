@@ -5,7 +5,7 @@ using System.Text;
 
 using Foundation;
 using UIKit;
-
+/*In dieser Klasse wird die Attribute vom Archiv implementiert*/
 namespace bgf.Model
 {
     public enum interest { Journal = 1, Sport, Essen, Video, Gesundheit, Buecher, Praesentation};

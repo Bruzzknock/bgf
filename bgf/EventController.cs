@@ -5,6 +5,7 @@ using bgf.Static_Resources;
 using bgf.Model;
 using System.Collections.Generic;
 
+/*In dieser Klasse wird die TableView initialisiert und die Events vom ConnectionManager.cs benutzt*/
 namespace bgf
 {
     public partial class EventController : UIViewController
@@ -16,6 +17,7 @@ namespace bgf
 
         }
 
+        /*Mit dieser Methode wird die TableView initialisert beim Laden*/
         public override void ViewDidLoad()
         {
             ev = ConnectionManager.GetEvents();
@@ -25,11 +27,6 @@ namespace bgf
             
         }
 
-        private CustomEvent createCustomEventVC(int day)
-        {
-            CustomEvent customEvent = (CustomEvent)this.Storyboard.InstantiateViewController("CustomEvent");
-            customEvent.setDate(new DateTime(DateTime.Now.Year, 3, day));
-            return customEvent;
-        }
+        
     }
 }

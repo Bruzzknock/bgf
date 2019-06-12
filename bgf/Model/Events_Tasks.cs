@@ -6,7 +6,7 @@ using bgf;
 using Foundation;
 using Org.BouncyCastle.Asn1.Cms;
 using UIKit;
-
+/*In dieser Klasse wird die Attribute vom Events implementiert*/
 namespace bgf.Model
 {
     public class Events_Tasks
@@ -23,11 +23,7 @@ namespace bgf.Model
 
         public TimeSpan E_Bis { get; set; }
 
-        //public Events_Tasks()
-        //{
-
-        //}
-
+        /*Default Konstruktor*/
         public Events_Tasks()
         {
             this.E_ID = E_ID;

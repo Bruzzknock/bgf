@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1592" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-842" y="74"/>
+            <point key="canvasLocation" x="-1100" y="196"/>
         </scene>
         <scene sceneID="1855">
             <objects>
@@ -195,7 +195,7 @@
                     <connections>
                         <segue id="42368" destination="42130" kind="relationship" relationship="viewControllers"/>
                         <segue id="64599" destination="64093" kind="relationship" relationship="viewControllers"/>
-                        <segue id="87551" destination="24477" kind="relationship" relationship="viewControllers"/>
+                        <segue id="88353" destination="88141" kind="relationship" relationship="viewControllers"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1870" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -208,7 +208,7 @@
                     </tableViewCellContentView>
                 </tableViewCell>
             </objects>
-            <point key="canvasLocation" x="-388" y="80"/>
+            <point key="canvasLocation" x="-692" y="176"/>
         </scene>
         <scene sceneID="2502">
             <objects>
@@ -724,45 +724,6 @@
             </objects>
             <point key="canvasLocation" x="1296" y="1575"/>
         </scene>
-        <scene sceneID="24476">
-            <objects>
-                <tableViewController id="24477" sceneMemberID="viewController" customClass="SettingsViewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="24478">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="24481">
-                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="24481" id="24482">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="24477" id="24479"/>
-                            <outlet property="delegate" destination="24477" id="24480"/>
-                        </connections>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="25666" key="tableHeaderView">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Einmalige Anmeldung"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="25755" key="tableFooterView">
-                            <rect key="frame" x="0.0" y="116" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Abmelden"/>
-                        </button>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Einstellungen" id="24763"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="24483" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="334" y="-288"/>
-        </scene>
         <scene sceneID="40423">
             <objects>
                 <viewController id="40424" sceneMemberID="viewController" customClass="tvFilesController">
@@ -981,6 +942,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66326" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1245" y="292"/>
+        </scene>
+        <scene sceneID="88140">
+            <objects>
+                <viewController id="88141" sceneMemberID="viewController" customClass="SettingController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="88138"/>
+                        <viewControllerLayoutGuide type="bottom" id="88139"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="88142">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="88824" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="92" y="269" width="136" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Abmelden"/>
+                            </button>
+                        </subviews>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Einstellujngen" id="88352"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btnAbmelden" destination="88824" id="name-outlet-88824"/>
+                        <segue id="90344" destination="1590" kind="show"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="88143" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-76" y="-548"/>
         </scene>
     </scenes>
     <resources>

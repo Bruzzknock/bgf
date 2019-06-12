@@ -5,7 +5,7 @@ using System.Text;
 
 using Foundation;
 using UIKit;
-
+/*In dieser Klasse wird die Picker implementiert. Es wird verwendet um den Filter umzusetzen*/
 namespace bgf.Model
 {
     public class PickerModel : UIPickerViewModel

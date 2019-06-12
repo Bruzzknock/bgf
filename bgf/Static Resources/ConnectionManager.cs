@@ -10,16 +10,23 @@ using bgf.Static_Resources;
 using Foundation;
 using MySql.Data.MySqlClient;
 using UIKit;
+using Xamarin.Auth;
+/*
+* Hier ist die Verbindung mit der Datenbank. Es werden jeweils die Dokumente (Magazine, Videos, Präsentationen) und die Events hier
+* abgerufen.*/
+
+
+
 
 namespace bgf.Static_Resources
 {
     public static class ConnectionManager
     {
-        
+        //Die Verbindungsdaten zur Datenbank wird hier als String gespeichert.
         static string connStr = "server=bak.teamoddity.com;user=root;database=BAK;password=BAKpasswd";
         static MySqlConnection conn = new MySqlConnection(connStr);
         
-
+        //Das Login wird mit dieser Methode überprüft, ob ein User vorhanden ist oder nicht.
         public static bool Anmelden(string username, string password)
         {
             bool loggedIn = false;
@@ -58,6 +65,9 @@ namespace bgf.Static_Resources
             return loggedIn;
         }
 
+       
+
+        /*Mit dieser Methode werden die Magazine, Videos, Präsentationen aus der Datenbank ausgelesen */
         public static List<File> GetFiles()
         {
             List<File> files = new List<File>();
@@ -96,7 +106,10 @@ namespace bgf.Static_Resources
 
             return files;
         }
-        
+
+
+        /*Mit dieser Methode werden die Magazine, Videos, Präsentationen aus der Datenbank ausgelesen 
+           und jeweils nach Interessen gefiltert*/
         public static List<File> GetFiles(string date,string interest, string type)
         {
             List<File> files = new List<File>();
@@ -152,6 +165,7 @@ namespace bgf.Static_Resources
             return files;
         }
 
+        /*Mit dieser Methode werden Teilnehmer von Events in die Datenbank eingetragen*/
         public static void InsertData()
         {
             try
@@ -189,10 +203,9 @@ namespace bgf.Static_Resources
             conn.Close();
             Debug.WriteLine("Done.");
 
-
-
         }
 
+        /*Mit dieser Methode werden die Datum von der Magazine, Videos, Präsentationen aus der Datenbank ausgelesen */
         public static string[] GetDates()
         {
             List<string> dates = new List<string>();
@@ -224,6 +237,7 @@ namespace bgf.Static_Resources
             return dates.ToArray();
         }
 
+        /*Mit dieser Methode werden die Interressen aus der Datenbank ausgelesen*/
         public static string[] GetInterests()
         {
             List<string> interests = new List<string>();
@@ -261,6 +275,7 @@ namespace bgf.Static_Resources
             return interests.ToArray();
         }
 
+        /*Mit dieser Methode werden die Datentypen der Dokumente aus der Datenbank ausgelesen*/
         public static string[] GetType()
         {
             List<string> types = new List<string>();
@@ -292,6 +307,7 @@ namespace bgf.Static_Resources
             return types.ToArray();
         }
 
+        /*Mit dieser Methode werden die Veranstaltungen aus der Datenbank ausgelesen*/
         public static List<Events_Tasks> GetEvents()
         {
             List<Events_Tasks> events = new List<Events_Tasks>();
@@ -334,6 +350,7 @@ namespace bgf.Static_Resources
             return events;
         }
 
+        /*Mit dieser Methode werden die Teilnehmer einer Veranstaltung ausgelesen*/
         public static bool GetT()
         {
             Boolean angemeldet = false;
@@ -372,6 +389,7 @@ namespace bgf.Static_Resources
             return angemeldet;
         }
 
+        /*Mit dieser Methode der Datentyp "pdf" abgfragt um zu wissen ob es eine Magazin ist oder nicht*/
         private static bool isMagazine(string type)
         {
             if (type.Contains("pdf"))

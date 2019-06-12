@@ -3,7 +3,7 @@ using System;
 using UIKit;
 using AVKit;
 using AVFoundation;
-
+/*In dieser Klasse wird das anzeigen von Videos implementiert*/
 namespace bgf
 {
     public partial class VideosController : UIViewController

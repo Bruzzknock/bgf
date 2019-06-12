@@ -4,7 +4,10 @@ using UIKit;
 using bgf.Static_Resources;
 using System.Collections.Generic;
 using bgf.Model;
-
+/*
+ * In dieser Klasse werden die einzelnen Events genauer dargestellt.
+ */
+ 
 
 namespace bgf
 {
@@ -37,13 +40,6 @@ namespace bgf
             this.date = date;
         }
 
-        /*public override void ViewDidLoad()
-        {
-            lblDatum.Text = date.ToShortDateString();
-            lblDescription.Text = "Here will be short description of the event";
-            this.Title = "Event Name";
-        }*/
-
         public override void ViewDidLoad()
         {
 
@@ -65,17 +61,12 @@ namespace bgf
                     btnAnAbmelden.TouchUpInside += (sender, e) =>
                     {
 
-
-
-
-
                         new UIAlertView("Anmeldung", "Sie haben sich angemeldet.", null, "Ok", null).Show();
                         btnAnAbmelden.SetTitle("Anmeldung", forState: UIControlState.Disabled);
 
                         ConnectionManager.InsertData();
                         btnAnAbmelden.Hidden = true;
-                    
-                   
+                                      
 
                     };
                 }
@@ -86,25 +77,12 @@ namespace bgf
 
             }
 
-
-
-
-
-
-
-
-
         }
-        
-           
-        
 
         public int GetE_ID()
         {
            return e_ID;
         }
-
-        
 
     }
 }
