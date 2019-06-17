@@ -25,7 +25,8 @@ namespace bgf.Static_Resources
         //Die Verbindungsdaten zur Datenbank wird hier als String gespeichert.
         static string connStr = "server=bak.teamoddity.com;user=root;database=BAK;password=BAKpasswd";
         static MySqlConnection conn = new MySqlConnection(connStr);
-        static string URLAddon = "http://bak.teamoddity.com";
+
+        static string URLAddon = "http://bak.teamoddity.com/uploads/";
 
         //Das Login wird mit dieser Methode überprüft, ob ein User vorhanden ist oder nicht.
         public static bool Anmelden(string username, string password)

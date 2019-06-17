@@ -54,7 +54,7 @@ namespace bgf
             else
             {
                 //NSUrl url = new NSUrl("Aktive Pausengestaltung.mp4", false)
-                //"https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));
+                /*"https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));*/
                 AVPlayer player = new AVPlayer(new NSUrl(files[indexPath.Row].URL));
                 AVPlayerViewController aVPlayerView = new AVPlayerViewController();
                 aVPlayerView.Player = player;
