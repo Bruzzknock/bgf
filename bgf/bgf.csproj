@@ -175,9 +175,18 @@
     <Compile Include="Anmelden.designer.cs">
       <DependentUpon>Anmelden.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventController.cs" />
-    <Compile Include="EventController.designer.cs">
+    <Compile Include="Controller\EventController.cs" />
+    <Compile Include="Controller\EventController.designer.cs">
       <DependentUpon>EventController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\EinstellungenController.cs" />
+    <Compile Include="Controller\EinstellungenController.designer.cs">
+      <DependentUpon>EinstellungenController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InteresstTVS.cs" />
+    <Compile Include="EinstellungenViewsCell.cs" />
+    <Compile Include="EinstellungenViewsCell.designer.cs">
+      <DependentUpon>EinstellungenViewsCell.cs</DependentUpon>
     </Compile>
     <Compile Include="EventsTV.cs" />
     <Compile Include="EventViewCell.cs" />
@@ -185,11 +194,21 @@
       <DependentUpon>EventViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Controller\InteresstsController.cs" />
+    <Compile Include="Controller\InteresstsController.designer.cs">
+      <DependentUpon>InteresstsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InteresstsCustomCell.cs" />
+    <Compile Include="InteresstsCustomCell.designer.cs">
+      <DependentUpon>InteresstsCustomCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Einstellungen.cs" />
     <Compile Include="Model\Events_Tasks.cs" />
+    <Compile Include="Model\Interrests.cs" />
     <Compile Include="Model\PickerModel.cs" />
-    <Compile Include="SettingController.cs" />
-    <Compile Include="SettingController.designer.cs">
-      <DependentUpon>SettingController.cs</DependentUpon>
+    <Compile Include="Controller\PasswortController.cs" />
+    <Compile Include="Controller\PasswortController.designer.cs">
+      <DependentUpon>PasswortController.cs</DependentUpon>
     </Compile>
     <Compile Include="Static Resources\ConnectionManager.cs" />
     <Compile Include="CustomEvent.cs" />
@@ -201,12 +220,12 @@
       <DependentUpon>FilesViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="FileTVS.cs" />
-    <Compile Include="HomeController.cs" />
-    <Compile Include="HomeController.designer.cs">
+    <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Controller\HomeController.designer.cs">
       <DependentUpon>HomeController.cs</DependentUpon>
     </Compile>
-    <Compile Include="MagazineController.cs" />
-    <Compile Include="MagazineController.designer.cs">
+    <Compile Include="Controller\MagazineController.cs" />
+    <Compile Include="Controller\MagazineController.designer.cs">
       <DependentUpon>MagazineController.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
@@ -215,12 +234,12 @@
     <Compile Include="Model\File.cs" />
     <Compile Include="Static Resources\Events.cs" />
     <Compile Include="Static Resources\Interests.cs" />
-    <Compile Include="tvFilesController.cs" />
-    <Compile Include="tvFilesController.designer.cs">
+    <Compile Include="Controller\tvFilesController.cs" />
+    <Compile Include="Controller\tvFilesController.designer.cs">
       <DependentUpon>tvFilesController.cs</DependentUpon>
     </Compile>
-    <Compile Include="VideosController.cs" />
-    <Compile Include="VideosController.designer.cs">
+    <Compile Include="Controller\VideosController.cs" />
+    <Compile Include="Controller\VideosController.designer.cs">
       <DependentUpon>VideosController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -238,6 +257,12 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\unBakbar-Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\uncheck.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

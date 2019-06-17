@@ -25,7 +25,8 @@ namespace bgf.Static_Resources
         //Die Verbindungsdaten zur Datenbank wird hier als String gespeichert.
         static string connStr = "server=bak.teamoddity.com;user=root;database=BAK;password=BAKpasswd";
         static MySqlConnection conn = new MySqlConnection(connStr);
-        
+        static string URLAddon = "http://bak.teamoddity.com";
+
         //Das Login wird mit dieser Methode überprüft, ob ein User vorhanden ist oder nicht.
         public static bool Anmelden(string username, string password)
         {
@@ -65,7 +66,61 @@ namespace bgf.Static_Resources
             return loggedIn;
         }
 
-       
+        public static void updatePassword(string password)
+        {
+            try
+            {
+                Debug.WriteLine("Connecting to MySQL...");
+                conn.Open();
+
+                string sql = "UPDATE `Benutzer` SET `Benutzer_Passwort` = @password WHERE Benutzer_Name = @username;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@username", Benutzer.Username);
+                cmd.Parameters.AddWithValue("@password", password);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+
+            conn.Close();
+            Debug.WriteLine("Done.");
+        }
+
+        public static bool isOldPasswordCorrect(string password)
+        {
+            bool oldPassword = false;
+
+            try
+            {
+                Debug.WriteLine("Connecting to MySQL...");
+                conn.Open();
+
+                string sql = "SELECT * FROM Benutzer where Benutzer_Name = @username AND Benutzer_Passwort = @password;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@username", Benutzer.Username);
+                cmd.Parameters.AddWithValue("@password", password);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    oldPassword = true;
+                }
+                rdr.Close();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+
+            conn.Close();
+            Debug.WriteLine("Done.");
+
+            return oldPassword;
+        }
 
         /*Mit dieser Methode werden die Magazine, Videos, Präsentationen aus der Datenbank ausgelesen */
         public static List<File> GetFiles()
@@ -86,7 +141,7 @@ namespace bgf.Static_Resources
                     File f = new File();
                     f.ID = (int)rdr[0];
                     f.Title = (string)rdr[1];
-                    f.URL = "http://bak.teamoddity.com" + (string)rdr[2];
+                    f.URL = URLAddon + (string)rdr[2];
                     f.Date = (DateTime)rdr[3];
                     f.isMagazine = isMagazine((string)rdr[4]);
                     f.Image = f.isMagazine ? new UIImage("pdf.png") : new UIImage("videoicon.png");
@@ -144,7 +199,7 @@ namespace bgf.Static_Resources
                     File f = new File();
                     f.ID = (int)rdr[0];
                     f.Title = (string)rdr[1];
-                    f.URL = "http://bak.teamoddity.com/data/" + (string)rdr[2];
+                    f.URL = URLAddon + (string)rdr[2];
                     f.Date = (DateTime)rdr[3];
                     f.isMagazine = isMagazine((string)rdr[4]);
                     f.Image = f.isMagazine ? new UIImage("pdf.png") : new UIImage("videoicon.png");
@@ -273,6 +328,75 @@ namespace bgf.Static_Resources
             Interests.Interest_Desc = interests.ToArray();
 
             return interests.ToArray();
+        }
+
+        public static void UpdateInterests(List<bool> selectedList)
+        {
+            try
+            {
+                Debug.WriteLine("Connecting to MySQL...");
+                conn.Open();
+
+                string sql = "DELETE FROM `Benutzer_Interessen` WHERE Benutzer_ID = @id;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", Benutzer.ID);
+
+                cmd.ExecuteNonQuery();
+
+                //treba insertinto
+                for(int i = 0;i < selectedList.Count;i++)
+                {
+                    if (selectedList[i])
+                    {
+                        string sql1 = "INSERT INTO Benutzer_Interessen (Benutzer_ID, Interessen_ID) VALUES(@id, @val);";
+
+                        MySqlCommand cmd1 = new MySqlCommand(sql1, conn);
+                        cmd1.Parameters.AddWithValue("@id", Benutzer.ID);
+                        cmd1.Parameters.AddWithValue("@val", i);
+
+                        cmd1.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                string message = ex.ToString();
+            }
+
+            conn.Close();
+            Debug.WriteLine("Done.");
+        }
+
+        public static List<int> GetInterestsFromUser()
+        {
+            List<int> interestsID = new List<int>();
+
+            try
+            {
+                Debug.WriteLine("Connecting to MySQL...");
+                conn.Open();
+
+                string sql = "SELECT * FROM Benutzer_Interessen WHERE Benutzer_ID = @id;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", Benutzer.ID);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    interestsID.Add((int)rdr[1]);
+                }
+                rdr.Close();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+
+            conn.Close();
+            Debug.WriteLine("Done.");
+
+            return interestsID;
         }
 
         /*Mit dieser Methode werden die Datentypen der Dokumente aus der Datenbank ausgelesen*/

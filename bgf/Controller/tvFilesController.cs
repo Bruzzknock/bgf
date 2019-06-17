@@ -34,15 +34,7 @@ namespace bgf
             currentlySelected = CurrentlySelected.Date;
             SelectFilter(btnYear);
             model.DidSelectionChange += saveSelection;
-            //model.Source = new string[] { "Kica","Mica"};
             uiPicker.Model = model;
-            /*UIImage image = new UIImage("bak2.jpg");
-            File f = new File();
-            f.URL = "http://www.pdf995.com/samples/pdf.pdf";
-            f.isMagazine = true;
-            f.Title = "Idem";
-            f.Image = image;
-            data.Add(f);*/
 
             filesTableView.Source = new FileTVS(data,this);
             filesTableView.RowHeight = 80;
