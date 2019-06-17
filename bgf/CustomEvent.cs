@@ -20,7 +20,7 @@ namespace bgf
         public DateTime e_Datum;
         public TimeSpan e_Bis;
         public TimeSpan e_Von;
-        int counter = 0;
+       
 
 
         List< Events_Tasks> e;
@@ -52,7 +52,8 @@ namespace bgf
             lblDescription.Text = e_Beschreibung;
             lblBis.Text = e_Bis.ToString();
             lblVon.Text = e_Von.ToString();
-
+            lblDescription.Editable = false;
+            
             if (e_ID == Events.ID)
             {
 
