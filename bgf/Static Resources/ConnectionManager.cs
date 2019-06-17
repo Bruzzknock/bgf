@@ -146,6 +146,7 @@ namespace bgf.Static_Resources
                     f.isMagazine = isMagazine((string)rdr[4]);
                     f.Image = f.isMagazine ? new UIImage("pdf.png") : new UIImage("videoicon.png");
                     f.Interest = (interest)rdr[5];
+                    f.URL = f.URL.Replace(" ", "%20");
 
                     files.Add(f);
                 }
@@ -204,6 +205,7 @@ namespace bgf.Static_Resources
                     f.isMagazine = isMagazine((string)rdr[4]);
                     f.Image = f.isMagazine ? new UIImage("pdf.png") : new UIImage("videoicon.png");
                     f.Interest = (interest)rdr[5];
+                    f.URL = f.URL.Replace(" ", "%20");
 
                     files.Add(f);
                 }
