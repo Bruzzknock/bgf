@@ -339,20 +339,20 @@ namespace bgf.Static_Resources
 
                 string sql = "DELETE FROM `Benutzer_Interessen` WHERE Benutzer_ID = @id;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@username", Benutzer.ID);
+                cmd.Parameters.AddWithValue("@id", Benutzer.ID);
 
                 cmd.ExecuteNonQuery();
 
                 //treba insertinto
-                for(int i = 1;i < selectedList.Count;i++)
+                for(int i = 0;i < selectedList.Count;i++)
                 {
                     if (selectedList[i])
                     {
                         string sql1 = "INSERT INTO Benutzer_Interessen (Benutzer_ID, Interessen_ID) VALUES(@id, @val);";
 
                         MySqlCommand cmd1 = new MySqlCommand(sql1, conn);
-                        cmd1.Parameters.AddWithValue("@username", Benutzer.ID);
-                        cmd1.Parameters.AddWithValue("@val", Interests.ID[i]);
+                        cmd1.Parameters.AddWithValue("@id", Benutzer.ID);
+                        cmd1.Parameters.AddWithValue("@val", i);
 
                         cmd1.ExecuteNonQuery();
                     }
@@ -361,6 +361,7 @@ namespace bgf.Static_Resources
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
+                string message = ex.ToString();
             }
 
             conn.Close();
@@ -370,7 +371,6 @@ namespace bgf.Static_Resources
         public static List<int> GetInterestsFromUser()
         {
             List<int> interestsID = new List<int>();
-            interestsID.Add(0);
 
             try
             {

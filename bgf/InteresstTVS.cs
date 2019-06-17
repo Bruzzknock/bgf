@@ -14,7 +14,6 @@ namespace bgf
     {
         List<Interrests> files;
         UIViewController owner;
-       
 
         public InterrestTVS(List<Interrests> files, InteresstsController interesstsController)
         {
@@ -57,7 +56,7 @@ namespace bgf
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             //UpdateCell(tableView, indexPath, files[indexPath.Row]);
-            /*if (files[indexPath.Row].IsSelected)
+            if (files[indexPath.Row].IsSelected)
             {
                 files[indexPath.Row].Image = new UIImage("uncheck.png");
             }
@@ -65,8 +64,7 @@ namespace bgf
             {
                 files[indexPath.Row].Image = new UIImage("check.png");
             }
-            files[indexPath.Row].IsSelected = !files[indexPath.Row].IsSelected;*/
-            //files = null;
+            files[indexPath.Row].IsSelected = !files[indexPath.Row].IsSelected;
         }
     }
 }
