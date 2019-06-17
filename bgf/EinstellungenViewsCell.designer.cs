@@ -11,18 +11,18 @@ using UIKit;
 
 namespace bgf
 {
-    [Register ("SettingController")]
-    partial class SettingController
+    [Register ("EinstellungenViewsCell")]
+    partial class EinstellungenViewsCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnAbmelden { get; set; }
+        UIKit.UILabel lblTitle { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnAbmelden != null) {
-                btnAbmelden.Dispose ();
-                btnAbmelden = null;
+            if (lblTitle != null) {
+                lblTitle.Dispose ();
+                lblTitle = null;
             }
         }
     }
